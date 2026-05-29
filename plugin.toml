@@ -1,0 +1,51 @@
+schema = "animus.plugin.v1"
+name = "animus-subject-sentry"
+version = "0.1.0"
+plugin_kind = "subject_backend"
+description = "Sentry issue subject backend for Animus"
+
+[capabilities]
+streaming = false
+progress = false
+cancellation = false
+subject_kinds = ["incident"]
+methods = [
+  "subject/list",
+  "subject/get",
+  "subject/update",
+  "subject/schema",
+  "health/check",
+]
+
+[binary]
+default = "animus-subject-sentry"
+
+[[env]]
+key = "SENTRY_AUTH_TOKEN"
+description = "Sentry authentication token."
+required = true
+sensitive = true
+
+[[env]]
+key = "SENTRY_ORG_SLUG"
+description = "Sentry organization slug."
+required = true
+sensitive = false
+
+[[env]]
+key = "SENTRY_PROJECT_IDS"
+description = "Optional comma-separated Sentry project ids to include in subject/list."
+required = false
+sensitive = false
+
+[[env]]
+key = "SENTRY_QUERY"
+description = "Optional Sentry issue search query for subject/list."
+required = false
+sensitive = false
+
+[[env]]
+key = "SENTRY_API_BASE"
+description = "Override Sentry API base URL."
+required = false
+sensitive = false
