@@ -369,6 +369,7 @@ impl SubjectBackend for SentryBackend {
             ],
             supports_watch: false,
             supports_create: false,
+            supports_delete: false,
             supports_pagination: false,
             native_status_values: vec![
                 "unresolved".to_string(),

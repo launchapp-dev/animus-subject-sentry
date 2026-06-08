@@ -1,6 +1,6 @@
 schema = "animus.plugin.v1"
 name = "animus-subject-sentry"
-version = "0.1.0"
+version = "0.1.1"
 plugin_kind = "subject_backend"
 description = "Sentry issue subject backend for Animus"
 
